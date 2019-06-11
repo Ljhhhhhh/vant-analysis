@@ -9,3 +9,10 @@ export function camelize(str) {
 export function padZero(num) {
   return (num < 10 ? '0' : '') + num;
 }
+
+/**
+ * Is image source
+ */
+export function isSrc(url) {
+  return /^(https?:)?\/\/|data:image/.test(url);
+}

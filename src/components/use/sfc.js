@@ -30,37 +30,36 @@ function defaultProps(props) {
  * @param {*} opt 
  */
 
- const tmp = {
-  render: function(createElement) {
-    var self = this;
-    return createElement('div', {//一个包含模板相关属性的数据对象
-        'class': {
-            foo: true,
-            bar: false
-        },
-        on: {
-          click: () => {
-            console.log('hello');
-          }
-        },
-        style: {
-            color: 'red',
-            fontSize: '14px'
-        },
-        attrs: {
-            id: 'foo'
-        },
-        domProps: {
-            innerHTML: 'baz'
-        }
-    });
-  }
-}
+//  const tmp = {
+//   render: function(createElement) {
+//     var self = this;
+//     return createElement('div', {//一个包含模板相关属性的数据对象
+//         'class': {
+//             foo: true,
+//             bar: false
+//         },
+//         on: {
+//           click: () => {
+//             console.log('hello');
+//           }
+//         },
+//         style: {
+//             color: 'red',
+//             fontSize: '14px'
+//         },
+//         attrs: {
+//             id: 'foo'
+//         },
+//         domProps: {
+//             innerHTML: 'baz'
+//         }
+//     });
+//   }
+// }
 
 function install(Vue, opt) {
+  console.log(opt, 'opt');
   const { name } = opt;
-  
-  // Vue.component('van-button', tmp)
   Vue.component(name, opt);
   Vue.component(camelize(`-${name}`), opt);
 }
@@ -85,7 +84,6 @@ function transformFunctionComponent(pure){
     props: pure.props,
     model: pure.model,
     render: (h, context) => {
-      console.log(context, '222');
       return pure(h, context.props, unifySlots(context), context)
     }
   };
