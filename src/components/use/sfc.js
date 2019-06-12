@@ -1,6 +1,7 @@
 /**
  * Create a basic component with common options
  */
+// import Vue from 'vue';
 import { camelize } from '../../utils/string';
 import { SlotsMixin } from '../../utils/slots';
 
@@ -30,37 +31,11 @@ function defaultProps(props) {
  * @param {*} opt 
  */
 
-//  const tmp = {
-//   render: function(createElement) {
-//     var self = this;
-//     return createElement('div', {//一个包含模板相关属性的数据对象
-//         'class': {
-//             foo: true,
-//             bar: false
-//         },
-//         on: {
-//           click: () => {
-//             console.log('hello');
-//           }
-//         },
-//         style: {
-//             color: 'red',
-//             fontSize: '14px'
-//         },
-//         attrs: {
-//             id: 'foo'
-//         },
-//         domProps: {
-//             innerHTML: 'baz'
-//         }
-//     });
-//   }
-// }
-
-function install(Vue, opt) {
-  const { name } = opt;
-  Vue.component(name, opt);
-  Vue.component(camelize(`-${name}`), opt);
+function install(opt) {
+  // Vue.use(Button) this 指向utton
+  const { name } = this;
+  Vue.component(name, this);
+  Vue.component(camelize(`-${name}`), this);
 }
 
 // unify slots & scopedSlots

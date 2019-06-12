@@ -6,9 +6,22 @@ import Icon from './components/icon'
 import Toast from './components/toast'
 
 Vue.config.productionTip = false
-Vue.use(Button, Button)
-Vue.use(Toast, Toast)
-Vue.use(Icon, Icon)
+
+const components = [
+  Button,
+  Toast,
+  Icon
+]
+
+const install = (Vue) => {
+  components.forEach(Component => {
+    Vue.use(Component, Component);
+  });
+};
+
+/* istanbul ignore if */
+window.Vue = Vue
+install(Vue);
 
 new Vue({
   render: h => h(App),

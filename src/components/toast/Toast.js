@@ -70,7 +70,7 @@ export default sfc({
     const { type, message } = this;
     const style = STYLE.indexOf(type) !== -1 ? 'default' : type;
 
-    const Content = () => {
+    const Content = function() {
       switch (style) {
         case 'text':
           return <div>{message}</div>;
@@ -86,7 +86,8 @@ export default sfc({
             isDef(message) && <div class={bem('text')}>{message}</div>
           ];
       }
-    };
+    }
+
 
     return (
       <transition name="van-fade">

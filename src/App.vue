@@ -8,7 +8,7 @@
 
 <script>
 import Demo from '@/components/Demo'
-import Toast from './components/toast'
+// import Toast from './components/toast'
 export default {
   name: 'app',
   components: {
@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     show() {
-      Toast('提示内容');
+      this.$toast('提示内容');
       // this.$toast.success('toast');
     },
   }
