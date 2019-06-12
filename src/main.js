@@ -19,7 +19,6 @@ const install = (Vue) => {
   });
 };
 
-/* istanbul ignore if */
 window.Vue = Vue
 install(Vue);
 

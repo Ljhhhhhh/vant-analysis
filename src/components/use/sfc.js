@@ -1,7 +1,7 @@
 /**
  * Create a basic component with common options
  */
-// import Vue from 'vue';
+import Vue from 'vue';
 import { camelize } from '../../utils/string';
 import { SlotsMixin } from '../../utils/slots';
 
@@ -31,7 +31,7 @@ function defaultProps(props) {
  * @param {*} opt 
  */
 
-function install(opt) {
+function install() {
   // Vue.use(Button) this 指向utton
   const { name } = this;
   Vue.component(name, this);
