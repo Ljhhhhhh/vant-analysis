@@ -32,7 +32,7 @@ function defaultProps(props) {
  */
 
 function install() {
-  // Vue.use(Button) this 指向utton
+  // Vue.use(Button) this 指向Button
   const { name } = this;
   Vue.component(name, this);
   Vue.component(camelize(`-${name}`), this);
@@ -66,10 +66,12 @@ function transformFunctionComponent(pure){
 export function useSFC(name) {
   return function (sfc) {
     if (typeof sfc === 'function') {
+      // 利用无状态函数进行包装
       sfc = transformFunctionComponent(sfc);
     }
 
     if (!sfc.functional) {
+      // Toast之类的组件
       sfc.mixins = sfc.mixins || [];
       sfc.mixins.push(SlotsMixin);
     }
