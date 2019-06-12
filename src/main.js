@@ -7,8 +7,8 @@ import Toast from './components/toast'
 
 Vue.config.productionTip = false
 Vue.use(Button, Button)
-// Vue.use(Toast, Toast)
-// Vue.use(Icon, Icon)
+Vue.use(Toast, Toast)
+Vue.use(Icon, Icon)
 
 new Vue({
   render: h => h(App),

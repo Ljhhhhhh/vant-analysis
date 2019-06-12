@@ -58,7 +58,6 @@ function defaultProps(props) {
 // }
 
 function install(Vue, opt) {
-  console.log(opt, 'opt');
   const { name } = opt;
   Vue.component(name, opt);
   Vue.component(camelize(`-${name}`), opt);
