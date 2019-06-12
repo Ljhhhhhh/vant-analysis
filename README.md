@@ -1,29 +1,12 @@
-# vue-x
+# vant-analysis
 
-## Project setup
-```
-yarn install
-```
+vant 核心代码拆解分析
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
+### 前置知识
+* Vue无状态组件
+* Vue listeners
+* Vue.use()
 
-### Compiles and minifies for production
-```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 核心文件
+* /src/components/use/bem
+* /src/components/use/sfc
